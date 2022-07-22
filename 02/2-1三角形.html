@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!-- 设置底边就为border -->
+<!-- 等腰三角形 -->
+<div class="triangle-up"></div>
+<br>
+<!-- 缩写 取反 -->
+<div class="triangle"></div>
+<br>
+<div class="triangle-top"></div>
+<br>
+<!-- 直角三角形 -->
+<div class="triangle-top-left"></div>
+
+<div class="triangle-border"></div>
+</body>
+
+<hr>
+<p>要想变成那边另一边颜色就隐藏</p>
+<p>可以设置两个一样的三角形并移动覆盖，可做到^</p>
+<p><a href="https://www.php.cn/css-tutorial-473454.html">https://www.php.cn/css-tutorial-473454.html</a></p>
+<a href="https://www.jianshu.com/p/9a463d50e441">https://www.jianshu.com/p/9a463d50e441</a>
+
+<style>
+
+    .triangle-up {
+        width: 0px;
+        height: 0px;
+        border-bottom: 50px solid blue;
+        border-top: 50px solid yellow;
+        border-left: 50px solid red;
+        border-right: 50px solid gray;
+    }
+
+    .triangle {
+        width: 0;
+        height: 0;
+        border: 50px solid transparent;
+        border-left: 50px solid gold;
+    }
+
+    .triangle-top{
+        width: 0px;
+        height: 0px;
+        border-left: 50px solid wheat;
+        border-bottom: 50px solid gold;
+    }
+
+    .triangle-top-left {
+        position: relative;
+        width: 0px;
+        height: 0px;
+        border-left: 50px solid transparent;
+        border-bottom: 50px solid gold;
+    }
+
+    .triangle-border{
+        position: relative;
+        width: 0;
+        height: 0;
+        border: 50px solid transparent;
+        border-bottom: 50px solid red;
+    }
+
+    .triangle-border:after {
+        content: "";
+        position: absolute;
+        top: 3px;
+        left: -48px;
+        border-width: 0 48px 48px;
+        border-style: solid;
+        border-color: transparent transparent #fff;;
+    }
+
+</style>
+</html>

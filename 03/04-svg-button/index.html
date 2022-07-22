@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="button-wrapper">
+            <svg width="240" height="60">
+                <rect class="rectangle"  width="240" height="60"></rect>
+            </svg>
+            <div class="btn">按钮</div>
+        </div>
+        <!-- 定义矩形 -->
+   
+    </div>
+</body>
+<style>
+    html,body{
+        padding: 0;
+        margin: 0;
+    }
+
+    .container{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100vw;
+        height: 100vh;
+        background: #2f3542;
+    }
+
+    .button-wrapper{
+        position: relative;
+        width: 240px;
+        height: 60px;
+        text-align: center;
+    }
+
+    /* 定义线条样式 */
+    .rectangle{
+        /* 线条宽度 */
+        stroke-width: 8px;
+        stroke: #ff6348;
+        /* 填充为空 */
+        fill: transparent;
+        /* 线长100，间距500，然后重复线和间距 */
+        stroke-dasharray: 100 500;
+        /* 整数左偏移，负数右偏移 */
+        stroke-dashoffset: -372;
+    }
+
+    .btn{
+       color: white;
+       font-size: 18px;
+       letter-spacing: 6px;
+       position: relative;
+       top: -48px; 
+    }
+ 
+    /* 定义动画样式 */
+    @keyframes extend{
+        to{
+            stroke-dasharray: 600;
+            stroke-dashoffset: 0;
+            stroke-width: 2;
+        }
+    }
+
+    /* forwards:动画完成后，元素保持为最后一帧的状态 */
+    .button-wrapper:hover .rectangle{
+        animation: 0.5s extend linear forwards;
+    }
+
+
+
+
+</style>
+</html>
